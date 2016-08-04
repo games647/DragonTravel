@@ -63,7 +63,7 @@ public class DragonTravel extends JavaPlugin {
 
     public void reload() {
         Bukkit.getLogger().log(Level.INFO, "[DragonTravel] Reloading all files.");
-        Bukkit.getLogger().log(Level.INFO, "[DragonTravel] WE RECOMMEND NOT TO DO THIS BECAUSE IT MIGHT CAUSE SERIUOS PROBLEMS!");
+        Bukkit.getLogger().log(Level.INFO, "[DragonTravel] WE RECOMMEND NOT TO DO THIS BECAUSE IT MIGHT CAUSE SERIOUS PROBLEMS!");
         Bukkit.getLogger().log(Level.INFO, "[DragonTravel] SIMPLY RESTART YOUR SERVER INSTEAD; THAT'S MUCH SAFER!");
         dbStatDragonsHandler.unloadStationaryDragons();
         setupFileHandlers();
@@ -110,7 +110,7 @@ public class DragonTravel extends JavaPlugin {
     public void onDisable() {
     	
     	// Do not unload database if plugin failed to load
-    	// because if unsupported server version
+    	// because of unsupported server version
     	if(dbStatDragonsHandler != null)
     		dbStatDragonsHandler.unloadStationaryDragons();      
         
