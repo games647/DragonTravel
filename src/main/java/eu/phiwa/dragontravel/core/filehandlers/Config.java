@@ -84,6 +84,7 @@ public class Config {
         }
     }
 
+    @SuppressWarnings("deprecation")
     private void loadConfig() {
         configFile = new File(DragonTravel.getInstance().getDataFolder(), "config.yml");
         if (!configFile.exists())
@@ -95,7 +96,11 @@ public class Config {
         onlydragontraveldragons = config.getBoolean("AntiGriefDragons.ofDragonTravel", true);
         alldragons = config.getBoolean("AntiGriefDragons.all", false);
         ignoreAntiMobspawnAreas = config.getBoolean("AntiGriefDragons.bypassWorldGuardAntiSpawn", true);
-        requiredItem = Material.getMaterial(config.getString("RequiredItem.Item", "DRAGON_EGG"));
+        // It is possible to specify the required item by id or by material name
+        if (config.getInt("RequiredItem.Item") != 0)
+            requiredItem = Material.getMaterial(config.getInt("RequiredItem.Item", 122));
+        else
+            requiredItem = Material.getMaterial(config.getString("RequiredItem.Item", "DRAGON_EGG"));
         requireItemTravelStation = config.getBoolean("RequiredItem.For.toStation", false);
         requireItemTravelRandom = config.getBoolean("RequiredItem.For.toRandom", false);
         requireItemTravelCoordinates = config.getBoolean("RequiredItem.For.toCoordinates", false);
