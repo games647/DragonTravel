@@ -89,8 +89,8 @@
             <url>http://repo.gravitydevelopment.net/</url>
         </repository>
         <repository>
-            <id>yeti-repo</id>
-            <url>http://nexus.theyeticave.net/content/repositories/pub_releases</url>
+            <id>vault-repo</id>
+            <url>http://nexus.hc.to/content/repositories/pub_releases</url>
         </repository>
         <repository>
             <id>overcast releases</id>
@@ -125,7 +125,7 @@
         </dependency>
         <dependency>
             <groupId>org.bukkit</groupId>
-            <artifactId>craftbukkit-1.9.7</artifactId>
+            <artifactId>craftbukkit-1.8.7</artifactId>
             <version>1.8.7-R0.1-SNAPSHOT</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/craftbukkit-1.8.7-R0.1-SNAPSHOT.jar</systemPath>
@@ -195,8 +195,8 @@
             <groupId>net.gravitydevelopment.anticheat</groupId>
             <artifactId>AntiCheat</artifactId>
             <version>2.0.2</version>
-            <type>jar</type>
-            <scope>compile</scope>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/AntiCheat.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.sk89q</groupId>
@@ -212,7 +212,7 @@
         <dependency>
             <groupId>net.gravitydevelopment.updater</groupId>
             <artifactId>updater</artifactId>
-            <version>2.1</version>
+            <version>2.3</version>
         </dependency>
     </dependencies>
 </project>
